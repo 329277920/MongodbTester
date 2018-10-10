@@ -40,7 +40,7 @@ BSON支持的格式:[https://docs.mongodb.com/manual/reference/bson-types/](http
 *objectid*<br>
 参考:[https://docs.mongodb.com/manual/reference/bson-types/#objectid](https://docs.mongodb.com/manual/reference/bson-types/#objectid)<br>
 用于唯一标识一个文档，类似于主键。它可以由客户端指定，缺省由系统生成一个12字节的objectid。在文档中表示为"_id"。
-它由时间戳(Unix时间戳)、随机数、累加值组成。因此基于objectId的排序大致相当于按时间排序。**官方文档未找到这个"_id"列是否创建了索引，后续跟踪下执行计划**。
+它由时间戳(Unix时间戳)、随机数、累加值组成。因此基于objectId的排序大致相当于按时间排序。**同时mongodb也会在_id列上加入索引。可以通过 db.[索引名称].getindexes() 查看某个集合的索引情况**。
 
 <h2 id="2#">二、安装</h2>
 参考:[https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)<br>
